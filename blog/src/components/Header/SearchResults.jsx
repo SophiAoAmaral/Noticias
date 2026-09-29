@@ -36,7 +36,7 @@ export const SearchResults = () => {
                 <div className='grid grid-cols-3 gap-8'>
                     {
                     noticia.map((item)=>(
-                        <div>
+                        <div className='mb-10'>
                             <img src={item.image_url} alt="" className='h-[100%]' />
                             <h1>{item.title}</h1>
                         </div>
