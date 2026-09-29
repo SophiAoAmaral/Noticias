@@ -1,28 +1,32 @@
 @import "tailwindcss";
 
 /* globals.css */
-:root {
-  --bg:#F7F7F5; 
-  --surface:#FFFFFF; 
-  --surface-2:#EFEFEC; 
-  --surface-3:#E6E6E2;
-  --ink:#111214; 
-  --ink-2:#34373C; 
-  --muted:#5C6068; 
-  --faint:#8A8E95;
-  --line:#E3E3DF; 
-  --line-strong:#CDCDC8;
-  --accent:#2940D8; 
-  --accent-hover:#1F31B0;
-   --accent-soft:#E8EBFC; 
-   --on-accent:#FFFFFF;
-  --band:#121316;
-   --band-accent:#8B9BFF;
-    --danger:#B42318; 
-    --skel:#E9E9E5;
-    --font-tt:"Newsreader", serif;
-    --font-tt2: "Schibsted Grotesk", sans-serif;
-    --font-tt3:  "IBM Plex Mono", monospace;      
+
+
+@theme {
+  --font-title: "Newsreader", serif;
+  --font-body: "Schibsted Grotesk", sans-serif;
+  --font-code: "IBM Plex Mono", monospace;
+  --color--bg:#F7F7F5; 
+  --color--surface:#FFFFFF; 
+  --color-ink: #111214;
+  --color-ink-2: #34373C;
+  --color-muted: #5C6068;
+  --color-faint: #8A8E95;
+
+  --color-line: #E3E3DF;
+  --color-line-strong: #CDCDC8;
+
+  --color-accent: #2940D8;
+  --color-accent-hover: #1F31B0;
+  --color-accent-soft: #E8EBFC;
+  --color-on-accent: #FFFFFF;
+
+  --color-band: #121316;
+  --color-band-accent: #8B9BFF;
+
+  --color-danger: #B42318;
+  --color-skeleton: #E9E9E5;
 }
 .dark {
   --bg:#0C0D0F; 
@@ -44,3 +48,10 @@
    --danger:#FF8B7B; 
    --skel:#1C1F23;
 }
+
+ .container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }

@@ -17,6 +17,9 @@ build/
 .env.test.local
 .env.production.local
 
+.gitignore
+.gitattributes
+
 .vscode/*
 !.vscode/extensions.json
 .idea/
