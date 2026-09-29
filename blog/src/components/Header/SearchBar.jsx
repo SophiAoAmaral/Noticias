@@ -19,14 +19,7 @@ export const SearchBar = () => {
       }
     }
 
-    useEffect(()=>{
-      async function  pesquisaDeNoticias() {
-        if (!pesquisa) return;
-        const data = await pesquisarNoticia(pesquisa)
-        setNoticia(data);
-      }
-      pesquisaDeNoticias()
-    },[pesquisa])
+   
 
   return (
     <div className='flex gap-5 items-center border border-gray-300 w-90 py-2 px-4 rounded-2xl'>

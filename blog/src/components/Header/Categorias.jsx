@@ -6,19 +6,24 @@ export const Categorias = () => {
     const {categoria} = useParams()
     const {state} = useLocation();
     const [noticias, setNoticias] = useState([]);
+    const [loading, setLoading]= useState(true)
 
     useEffect(()=>{
         async function carregarNoticia() {
+          setLoading(true)
           const data = await buscaPorCategoria(categoria)
           setNoticias(data)
           console.log(data)
+          setLoading(false)
         }
         carregarNoticia()
     },[categoria]);
 
-    
+    if (loading) {
+      return <div className='text-center mt-50 text-xl'>Carregando...</div>;
+    }
   return (
-    <div className='text-'>
+    <div className='container'>
       <h1 className='capitalize'>{state.nome}</h1>
         {noticias.map((noticia)=>(
           <div>
