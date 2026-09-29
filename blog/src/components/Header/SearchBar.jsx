@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {useNavigate} from 'react-router'
 import { IoSearch } from "react-icons/io5";
+import { pesquisarNoticia } from '../../services/newServices';
 
 export const SearchBar = () => {
     const [pesquisa, setPesquisa] = useState("");
@@ -9,6 +10,7 @@ export const SearchBar = () => {
       if (!pesquisa.trim()) return;
 
       navigate(`/search?q=${pesquisa}`);
+      console.log(pesquisa)
     }
 
     function handleKeyDown(e) {
@@ -17,6 +19,14 @@ export const SearchBar = () => {
       }
     }
 
+    useEffect(()=>{
+      async function  pesquisaDeNoticias() {
+        if (!pesquisa) return;
+        const data = await pesquisarNoticia(pesquisa)
+        setNoticia(data);
+      }
+      pesquisaDeNoticias()
+    },[pesquisa])
 
   return (
     <div className='flex gap-5 items-center border border-gray-300 w-90 py-2 px-4 rounded-2xl'>

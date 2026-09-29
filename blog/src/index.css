@@ -55,3 +55,14 @@
     margin-inline: auto;
     padding-inline: 1.5rem;
   }
+
+ .ativo::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 3px;
+  background: var(--color-accent);
+}
