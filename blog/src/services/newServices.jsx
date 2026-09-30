@@ -28,10 +28,34 @@ export async function pesquisarNoticia(pesquisa) {
     params:{
       apikey: import.meta.env.VITE_API_KEY,
       q: pesquisa,
+      language: "pt",
+      size:30,
+    }
+  })
+  return  response.data.results
+};
+
+
+
+export async function destaquesNoticia() {
+  const response = await api.get('/latest',{
+    params:{
+      apikey: import.meta.env.VITE_API_KEY,
+      category: "wolrd",
       language: "pt"
     }
   })
   return  response.data.results
-}
+};
 
-console.log(import.meta.env.VITE_API_KEY);
+export async function ultimasNoticias() {
+  const response = await api.get('/latest',{
+    params:{
+      apikey: import.meta.env.VITE_API_KEY,
+      category: "top",
+      language: "pt",
+      size: 6,
+    }
+  })
+  return  response.data.results
+}

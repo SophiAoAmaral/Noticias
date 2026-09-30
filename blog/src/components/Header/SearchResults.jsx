@@ -7,18 +7,27 @@ export const SearchResults = () => {
     const [searchParams] = useSearchParams();
     const pesquisa = searchParams.get("q");
     const [noticia, setNoticia] = useState([]);
+    const [loading, setLoading] = useState()
     console.log(noticia)
      useEffect(()=>{
           async function  carregarNoticia() {
+            setLoading(true)
             if (!pesquisa) return;
+
             const data = await pesquisarNoticia(pesquisa)
             setNoticia(data);
+            setLoading(false)
           }
           carregarNoticia()
         },[pesquisa]);
+        if(loading){
+            return <div className='text-center mt-50 text-lg'>
+                 <p>Carregando....</p>
+            </div>
+        }
         if (noticia.length === 0) {
           return (
-            <div className="flex flex-col items-center justify-center py-20">
+            <div className="flex flex-col items-center justify-center py-20 ">
               <h2 className="text-2xl font-semibold">
                 Nenhuma notícia encontrada
               </h2>
