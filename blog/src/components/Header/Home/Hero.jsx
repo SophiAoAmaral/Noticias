@@ -7,7 +7,7 @@ export const Hero = ({article}) => {
     <Link to={article.link}>
         <img src={article.image_url} alt="" className='w-[100%] h-[600px] rounded-2xl '/>
         <div className='flex justify-between mt-2 items-center font-body'>
-          <span className='uppercase text-accent font-semibold text-sm  relative detail2 pl-4'>{article.keywords[0]}</span>
+          <span className='uppercase text-accent font-semibold text-sm  relative detail2 pl-4'>{article.keywords?.[0]}</span>
           <span className='text-xs'>{article.pubDate}</span>
         </div>
         <h1 className='font-title text-5xl mt-5 w-190 mb-2'>{article.title}</h1>

@@ -26,7 +26,7 @@ export const SearchBar = () => {
       <IoSearch size={20}/>
         <input 
         type="text"  
-        className='w-full p-1 focus:border-none outline-0'
+        className='w-full p-1 focus:border-none outline-0 text-muted'
         placeholder="Buscar notícias..." 
         value={pesquisa}
         onChange={(e) => setPesquisa(e.target.value)}

@@ -2,6 +2,37 @@
 
 /* globals.css */
 
+:root{
+  @import "tailwindcss";
+
+:root {
+  --color-bg: #F7F7F5;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #EFEFEC;
+  --color-surface-3: #E6E6E2;
+
+  --color-ink: #111214;
+  --color-ink-2: #34373C;
+  --color-muted: #5C6068;
+  --color-faint: #8A8E95;
+
+  --color-line: #E3E3DF;
+  --color-line-strong: #CDCDC8;
+
+  --color-accent: #2940D8;
+  --color-accent-hover: #1F31B0;
+  --color-accent-soft: #E8EBFC;
+
+  --color-on-accent: #FFFFFF;
+
+  --color-band: #121316;
+  --color-band-accent: #8B9BFF;
+
+  --color-danger: #B42318;
+  --color-skeleton: #E9E9E5;
+}
+}
+
 
 @theme {
   --font-title: "Newsreader", serif;
@@ -29,24 +60,34 @@
   --color-skeleton: #E9E9E5;
 }
 .dark {
-  --bg:#0C0D0F; 
-  --surface:#141619; 
-  --surface-2:#1B1E22; 
-  --surface-3:#24272C;
-  --ink:#EDEDEA; 
-  --ink-2:#C9CBCF; 
-  --muted:#9CA0A8; 
-  --faint:#6E737B;
-  --line:#25282D; 
-  --line-strong:#363A41;
-  --accent:#8B9BFF; 
-  --accent-hover:#A9B5FF; 
-  --accent-soft:#1C2148;
-   --on-accent:#0C0D0F;
-  --band:#15171B;
-   --band-accent:#8B9BFF; 
-   --danger:#FF8B7B; 
-   --skel:#1C1F23;
+  --color-bg: #0C0D0F;
+  --color-surface: #141619;
+  --color-surface-2: #1B1E22;
+  --color-surface-3: #24272C;
+  --color-ink: #EDEDEA;
+  --color--2ink: #C9CBCF;
+  --color-muted: #9CA0A8;
+  --color-faint: #6E737B;
+  --color-line: #25282D;
+  --color-line-strong: #363A41;
+  --color-accent: #8B9BFF;
+  --color-accent-hover: #A9B5FF;
+  --color-accent-soft: #1C2148;
+
+  --color-on-accent: #0C0D0F;
+
+  --color-band: #15171B;
+  --color-band-accent: #8B9BFF;
+
+  --color-danger: #FF8B7B;
+  --color-skeleton: #1C1F23;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+
+  transition: background-color .3s ease, color .3s ease;
 }
 
  .container {
