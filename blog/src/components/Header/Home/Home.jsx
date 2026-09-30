@@ -25,7 +25,9 @@ export const Home = () => {
 }
   return (
     <section className='container mt-10'>
-      <div className='grid grid-cols-[70%_auto]  gap-10 mb-10'>
+
+      <h1 className='text-center font-title text-5xl mb-5 font-semibold'>Últimas noticias</h1>
+      <div className='grid grid-cols-[70%_auto]  gap-10 mb-10 items-start'>
         <Hero article={noticiaPrincial}/>
         <TreadingNews article={noticiasLaterais}/>
         </div>
