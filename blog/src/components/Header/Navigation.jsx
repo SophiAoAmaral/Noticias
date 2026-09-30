@@ -17,7 +17,7 @@ export const Navigation = () => {
   return (
     <ul className=" flex gap-5 container font-body text-sm justify-center p-4 font-medium ">
       {topicos.map((item) => (
-        <li key={item.item} className='relative'>
+        <li key={item.nome} className='relative'>
           <NavLink
             to={item.rota}
             state={{nome: item.nome}}

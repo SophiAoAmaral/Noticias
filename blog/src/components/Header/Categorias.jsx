@@ -13,7 +13,6 @@ export const Categorias = () => {
           setLoading(true)
           const data = await buscaPorCategoria(categoria)
           setNoticias(data)
-          console.log(data)
           setLoading(false)
         }
         carregarNoticia()
@@ -26,7 +25,7 @@ export const Categorias = () => {
     <div className='container'>
       <h1 className='capitalize'>{state.nome}</h1>
         {noticias.map((noticia)=>(
-          <div>
+          <div key={noticia.title}>
             <h1>{noticia.title}</h1>
           </div>
         ))}

@@ -25,7 +25,7 @@ export const Home = () => {
 }
   return (
     <section className='container mt-10'>
-      <div className='grid grid-cols-[70%_auto]  gap-10'>
+      <div className='grid grid-cols-[70%_auto]  gap-10 mb-10'>
         <Hero article={noticiaPrincial}/>
         <TreadingNews article={noticiasLaterais}/>
         </div>

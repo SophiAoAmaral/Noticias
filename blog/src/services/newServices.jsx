@@ -41,7 +41,7 @@ export async function destaquesNoticia() {
   const response = await api.get('/latest',{
     params:{
       apikey: import.meta.env.VITE_API_KEY,
-      category: "wolrd",
+      category: "world",
       language: "pt"
     }
   })
@@ -58,4 +58,6 @@ export async function ultimasNoticias() {
     }
   })
   return  response.data.results
-}
+};
+
+console.log("API KEY:", import.meta.env.VITE_API_KEY);
