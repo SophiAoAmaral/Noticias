@@ -42,7 +42,8 @@ export async function destaquesNoticia() {
     params:{
       apikey: import.meta.env.VITE_API_KEY,
       category: "world",
-      language: "pt"
+      language: "pt",
+      size: 5,
     }
   })
   return  response.data.results
@@ -59,5 +60,3 @@ export async function ultimasNoticias() {
   })
   return  response.data.results
 };
-
-console.log("API KEY:", import.meta.env.VITE_API_KEY);

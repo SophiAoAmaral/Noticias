@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Hero } from './Hero'
 import { TreadingNews } from './TreadingNews'
 import { buscarPrincipaisNoticias } from '../../../services/newServices'
+import { EmDestaque } from './EmDestaque'
 
 export const Home = () => {
   const [noticias, setNoticias] = useState([]);
@@ -24,13 +25,17 @@ export const Home = () => {
   </div>
 }
   return (
-    <section className='container mt-10'>
+    <section className=' mt-10'>
 
-      <h1 className='text-center font-title text-5xl mb-5 font-semibold'>Últimas noticias</h1>
-      <div className='grid grid-cols-[70%_auto]  gap-10 mb-10 items-start'>
-        <Hero article={noticiaPrincial}/>
-        <TreadingNews article={noticiasLaterais}/>
-        </div>
+      <div className='container'>
+        <h1 className='text-center font-title text-5xl mb-5 font-semibold'>Últimas noticias</h1>
+        <div className='grid grid-cols-[70%_auto]  gap-10 mb-10 items-start border-b border-gray-300'>
+          <Hero article={noticiaPrincial}/>
+          <TreadingNews article={noticiasLaterais}/>
+          </div>
+      </div>
+
+      <EmDestaque/>
     </section>
   )
 }
