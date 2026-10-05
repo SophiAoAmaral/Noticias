@@ -1,6 +1,6 @@
 import {React, useEffect, useState} from 'react'
 import { destaquesNoticia } from '../../../services/newServices';
-
+import { Link } from 'react-router';
 export const EmDestaque = () => {
     const [noticias, setNoticias] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -24,13 +24,13 @@ export const EmDestaque = () => {
 
       console.log(noticias)
   return (
-    <div className="bg-[#0C0D0F] font-body">
+    <div className="bg-[#0C0D0F] font-body mb-20">
       <div className="container p-10">
-        <div className="flex flex-col ">
+        <div className="flex flex-col mb-2 ">
           <span className="uppercase text-band-accent text-sm">
             Ganhando relêvancia agora
           </span>
-          <h1 className="text-white text-4xl">Em destaque</h1>
+          <h1 className="text-white text-5xl font-title mt-2">Em destaque</h1>
           <span className="text-faint self-end">
             Atualizado as {horas}:{minutos}
           </span>
@@ -38,12 +38,12 @@ export const EmDestaque = () => {
 
         <div className="flex">
           {noticias.map((noticia, index) => (
-            <div key={noticia.article_id} className='flex flex-col border border-gray-300/40 p-5'>
-              <span className="text-band-accent text-2xl font-code font-light">0{index + 1}</span>
-              <span className='text-faint uppercase'>{noticia.country[0].replace('z', 's')}</span>
-              <h2 className='font-title text-white'>{noticia.title}</h2>
-              <span className='text-faint'> {noticia.creator == null ? noticia.source_name : noticia.creator }</span>
-            </div>
+            <Link key={noticia.article_id} to={noticia.link} className='flex flex-col gap-2 border border-gray-300/40 p-5'>
+              <span className="text-band-accent text-5xl font-code font-light">0{index + 1}</span>
+              <span className='text-faint uppercase text-xs'>{noticia.country[0].replace('z', 's')}</span>
+              <h2 className='font-title text-white text-2xl'>{noticia.title}</h2>
+              <span className='text-faint capitalize'> {noticia.creator == null ? noticia.source_name : noticia.creator }</span>
+            </Link>
           ))}
         </div>
       </div>
