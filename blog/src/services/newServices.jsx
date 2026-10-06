@@ -1,62 +1,80 @@
 import { api } from "./api";
-
 export async function buscarPrincipaisNoticias() {
-const response = await api.get("/latest", {
+  const response = await api.get("/top-headlines", {
     params: {
       apikey: import.meta.env.VITE_API_KEY,
       country: "br",
-      language: "pt",
-      size: 5,
+      lang: "pt",
+      max: 5,
     },
-});
-return response.data.results
-} ;
+  });
+
+  return response.data.articles;
+}
 
 export async function buscaPorCategoria(categoria) {
-  const response = await api.get('/latest',{
-    params:{
+  const response = await api.get("/top-headlines", {
+    params: {
       apikey: import.meta.env.VITE_API_KEY,
       category: categoria,
-      language: "pt"
-    }
-  })
-  return  response.data.results
+      country: "br",
+      lang: "pt",
+      max: 15,
+    },
+  });
+
+  return response.data.articles;
 }
 
 export async function pesquisarNoticia(pesquisa) {
-   const response = await api.get('/latest',{
-    params:{
+  const response = await api.get("/search", {
+    params: {
       apikey: import.meta.env.VITE_API_KEY,
       q: pesquisa,
-      language: "pt",
-      size:30,
-    }
-  })
-  return  response.data.results
-};
+      country: "br",
+      lang: "pt",
+      max: 10,
+    },
+  });
 
-
+  return response.data.articles;
+}
 
 export async function destaquesNoticia() {
-  const response = await api.get('/latest',{
-    params:{
+  const response = await api.get("/top-headlines", {
+    params: {
       apikey: import.meta.env.VITE_API_KEY,
-      category: "world",
-      language: "pt",
-      size: 5,
-    }
-  })
-  return  response.data.results
-};
+      topic: "world",
+      lang: "pt",
+      max: 5,
+    },
+  });
+
+  return response.data.articles;
+}
 
 export async function ultimasNoticias() {
-  const response = await api.get('/latest',{
-    params:{
+  const response = await api.get("/top-headlines", {
+    params: {
       apikey: import.meta.env.VITE_API_KEY,
-      category: "top",
-      language: "pt",
-      size: 6,
-    }
-  })
-  return  response.data.results
-};
+      country: "br",
+      lang: "pt",
+      max: 6,
+    },
+  });
+
+  return response.data.articles;
+}
+
+export async function outrasNoticias() {
+  const response = await api.get("/top-headlines", {
+    params: {
+      apikey: import.meta.env.VITE_API_KEY,
+      topic: "breaking-news",
+      lang: "pt",
+      max: 6,
+    },
+  });
+
+  return response.data.articles;
+}

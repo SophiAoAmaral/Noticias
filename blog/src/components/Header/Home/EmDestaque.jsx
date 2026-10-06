@@ -4,9 +4,6 @@ import { Link } from 'react-router';
 export const EmDestaque = () => {
     const [noticias, setNoticias] = useState([]);
     const [loading, setLoading] = useState(true);
-    const numeros = [
-        {id:1},
-        {id:2},{id:3},{id:4},{id:5}]
     const agora = new Date();
     const horas = agora.getHours();
     const minutos = String(agora.getMinutes()).padStart(2, '0');
@@ -38,11 +35,11 @@ export const EmDestaque = () => {
 
         <div className="flex">
           {noticias.map((noticia, index) => (
-            <Link key={noticia.article_id} to={noticia.link} className='flex flex-col gap-2 border border-gray-300/40 p-5'>
+            <Link key={noticia} to={noticia.link} className='flex flex-col gap-2 border border-gray-300/40 p-5'>
               <span className="text-band-accent text-5xl font-code font-light">0{index + 1}</span>
-              <span className='text-faint uppercase text-xs'>{noticia.country[0].replace('z', 's')}</span>
+              <span className='text-faint uppercase text-xs'>{}</span>
               <h2 className='font-title text-white text-2xl'>{noticia.title}</h2>
-              <span className='text-faint capitalize'> {noticia.creator == null ? noticia.source_name : noticia.creator }</span>
+              <span className='text-faint capitalize'> {noticia.creator == null ? noticia.name : noticia.creator }</span>
             </Link>
           ))}
         </div>

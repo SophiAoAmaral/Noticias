@@ -3,6 +3,7 @@ import { Hero } from './Hero'
 import { TreadingNews } from './TreadingNews'
 import { buscarPrincipaisNoticias } from '../../../services/newServices'
 import { EmDestaque } from './EmDestaque'
+import { UltimasNoticias } from './UltimasNoticias'
 
 export const Home = () => {
   const [noticias, setNoticias] = useState([]);
@@ -29,13 +30,15 @@ export const Home = () => {
 
       <div className='container'>
         <h1 className='text-center font-title text-5xl mb-5 font-semibold'>Últimas noticias</h1>
-        <div className='grid grid-cols-[70%_auto]  gap-10 mb-10 items-start border-b border-gray-300'>
+        <div className='grid grid-cols-[70%_auto]  gap-10 mb-10 items-start '>
           <Hero article={noticiaPrincial}/>
           <TreadingNews article={noticiasLaterais}/>
           </div>
       </div>
 
       <EmDestaque/>
+
+      <UltimasNoticias/>
     </section>
   )
 }
